@@ -1114,7 +1114,7 @@ async function viewTipos() {
   const premio = Object.fromEntries(d.por_tipo.map((t) => [t.tipo, t.premio]));
   app.innerHTML = `
     <div class="page-head">
-      <div><h1>Tipos de seguro</h1><p>Os ramos que a corretora trabalha. Cada apólice pertence a um tipo.</p></div>
+      <div><h1>Tipos de seguro</h1><p>Os ramos de seguro com que você trabalha. Cada apólice pertence a um tipo.</p></div>
     </div>
     <div class="types">
       ${tipos.map((t) => `

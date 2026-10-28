@@ -1,5 +1,5 @@
 """
-Subtil Corretora - versão programa (janela própria).
+Gestão de Seguros - versão programa (janela própria).
 Sobe o servidor local numa porta livre e abre a interface numa janela do Windows (WebView2).
 Execute:  .venv-build\\Scripts\\python app.py     |     Gerar o .exe:  .\\build.ps1
 """
@@ -63,7 +63,7 @@ def main():
 
     api = Api(base_url)
     api._window = webview.create_window(
-        "Subtil Corretora", base_url, js_api=api,
+        "Gestão de Seguros", base_url, js_api=api,
         width=1400, height=900, min_size=(1000, 650), background_color="#EDF0EA",
     )
     webview.start(storage_path=os.path.join(server.DATA_DIR, "webview"), private_mode=False)

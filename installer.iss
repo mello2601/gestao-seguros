@@ -1,7 +1,8 @@
-﻿; Instalador da Subtil Corretora (Inno Setup 6). Gerado pelo build.ps1.
-#define AppName "Subtil Corretora"
+﻿; Instalador do Gestão de Seguros (Inno Setup 6). Gerado pelo build.ps1.
+#define AppName "Gestão de Seguros"
+#define AppFolder "Gestao de Seguros"
 #define AppVersion "1.0.3"
-#define AppExe "Subtil Corretora.exe"
+#define AppExe "Gestao de Seguros.exe"
 
 [Setup]
 AppId={{6C1F2B7E-5A4D-4E0B-9C1E-5B2F0D7A9E31}
@@ -15,7 +16,7 @@ DisableProgramGroupPage=yes
 PrivilegesRequired=lowest
 PrivilegesRequiredOverridesAllowed=dialog
 OutputDir=dist
-OutputBaseFilename=Subtil-Corretora-Setup
+OutputBaseFilename=Gestao-de-Seguros-Setup
 SetupIconFile=assets\icon.ico
 UninstallDisplayIcon={app}\{#AppExe}
 Compression=lzma2/max
@@ -30,7 +31,7 @@ Name: "ptbr"; MessagesFile: "compiler:Languages\BrazilianPortuguese.isl"
 Name: "desktopicon"; Description: "Criar atalho na área de trabalho"; GroupDescription: "Atalhos:"
 
 [Files]
-Source: "dist\{#AppName}\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "dist\{#AppFolder}\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 
 [Icons]
 Name: "{group}\{#AppName}"; Filename: "{app}\{#AppExe}"
@@ -38,7 +39,7 @@ Name: "{group}\Desinstalar {#AppName}"; Filename: "{uninstallexe}"
 Name: "{autodesktop}\{#AppName}"; Filename: "{app}\{#AppExe}"; Tasks: desktopicon
 
 [Run]
-Filename: "{app}\{#AppExe}"; Description: "Abrir a {#AppName} agora"; Flags: nowait postinstall skipifsilent
+Filename: "{app}\{#AppExe}"; Description: "Abrir o {#AppName} agora"; Flags: nowait postinstall skipifsilent
 
-; Os dados (banco de dados) ficam em %APPDATA%\Subtil Corretora e NÃO são apagados ao desinstalar.
+; Os dados (banco de dados) ficam em %APPDATA%\Gestao de Seguros e NÃO são apagados ao desinstalar.
 

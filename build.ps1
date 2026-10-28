@@ -1,6 +1,6 @@
-﻿# Gera o programa Subtil Corretora para Windows.
-#   1. dist\Subtil Corretora\Subtil Corretora.exe   (programa pronto, pasta portátil)
-#   2. dist\Subtil-Corretora-Setup.exe              (instalador, se o Inno Setup 6 estiver instalado)
+﻿# Gera o programa Gestão de Seguros para Windows.
+#   1. dist\Gestao de Seguros\Gestao de Seguros.exe (programa pronto, pasta portátil)
+#   2. dist\Gestao-de-Seguros-Setup.exe              (instalador, se o Inno Setup 6 estiver instalado)
 # Uso (PowerShell, na pasta do projeto):  .\build.ps1
 $ErrorActionPreference = "Continue"  # PyInstaller escreve logs no stderr; checamos $LASTEXITCODE
 Set-Location $PSScriptRoot
@@ -15,13 +15,13 @@ if (-not (Test-Path $py)) {
 
 Write-Host "Empacotando com PyInstaller..."
 & $py -m PyInstaller --noconfirm --clean --windowed `
-    --name "Subtil Corretora" `
+    --name "Gestao de Seguros" `
     --icon "assets\icon.ico" `
     --add-data "static;static" `
     --distpath dist --workpath build `
     app.py
 if ($LASTEXITCODE -ne 0) { throw "PyInstaller falhou" }
-Write-Host "Programa gerado em: dist\Subtil Corretora\Subtil Corretora.exe"
+Write-Host "Programa gerado em: dist\Gestao de Seguros\Gestao de Seguros.exe"
 
 $iscc = @(
     "${env:ProgramFiles(x86)}\Inno Setup 6\ISCC.exe",
@@ -33,7 +33,7 @@ if ($iscc) {
     Write-Host "Gerando instalador com Inno Setup..."
     & $iscc /Q "installer.iss"
     if ($LASTEXITCODE -ne 0) { throw "Inno Setup falhou" }
-    Write-Host "Instalador gerado em: dist\Subtil-Corretora-Setup.exe"
+    Write-Host "Instalador gerado em: dist\Gestao-de-Seguros-Setup.exe"
 } else {
     Write-Host "Inno Setup 6 não encontrado: instalador não gerado (o programa em dist\ já funciona)."
 }

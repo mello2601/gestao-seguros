@@ -1,5 +1,5 @@
 """
-Subtil Corretora - sistema de gestão de seguros (servidor local).
+Gestão de Seguros - sistema de gestão de seguros (servidor local).
 Usa apenas a biblioteca padrão do Python (http.server + sqlite3).
 Modo navegador:  py server.py   e abra http://localhost:8000
 Modo programa:   py app.py      (janela própria; veja build.ps1 para gerar o .exe)
@@ -23,7 +23,7 @@ BASE_DIR = getattr(sys, "_MEIPASS", os.path.dirname(os.path.abspath(__file__)))
 STATIC_DIR = os.path.join(BASE_DIR, "static")
 
 # Os dados ficam na pasta do usuário, para sobreviver a atualizações/reinstalações do programa
-DATA_DIR = os.path.join(os.environ.get("APPDATA") or os.path.expanduser("~"), "Subtil Corretora")
+DATA_DIR = os.path.join(os.environ.get("APPDATA") or os.path.expanduser("~"), "Gestao de Seguros")
 DB_PATH = os.path.join(DATA_DIR, "seguros.db")
 LEGACY_DB = os.path.join(os.path.dirname(os.path.abspath(__file__)), "seguros.db")  # local antigo (ao lado do server.py)
 PORT = 8000
@@ -523,7 +523,7 @@ def financeiro_excel(conn, q, body):
 
     # --- aba 1: resumo
     ws = wb.sheet("Resumo", widths=[34, 22])
-    ws.row([Cell("Subtil Corretora - Relatório de prêmios e comissões", "title")])
+    ws.row([Cell("Gestão de Seguros - Relatório de prêmios e comissões", "title")])
     ws.row([Cell(periodo, "muted")])
     ws.row([Cell(f"Gerado em {date.today().strftime('%d/%m/%Y')}", "muted")])
     ws.row()
@@ -677,6 +677,6 @@ def create_server(port=PORT):
 
 if __name__ == "__main__":
     server = create_server()
-    print(f"Subtil Corretora rodando em http://localhost:{PORT}  (Ctrl+C para parar)")
+    print(f"Gestão de Seguros rodando em http://localhost:{PORT}  (Ctrl+C para parar)")
     print(f"Banco de dados: {DB_PATH}")
     server.serve_forever()

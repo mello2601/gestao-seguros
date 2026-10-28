@@ -1,4 +1,4 @@
-﻿# Subtil Corretora
+﻿# Gestão de Seguros
 
 Sistema de gestão de seguros: segurados, apólices, renovações, financeiro (prêmios e comissões) e exportação para Excel.
 
@@ -15,7 +15,7 @@ Sistema de gestão de seguros: segurados, apólices, renovações, financeiro (p
 | `build.ps1` | Gera o programa e o instalador |
 | `installer.iss` | Configuração do instalador (Inno Setup 6) |
 
-Os **dados** ficam em `%APPDATA%\Subtil Corretora\seguros.db`, tanto no programa instalado quanto no modo navegador.
+Os **dados** ficam em `%APPDATA%\Gestão de Seguros\seguros.db`, tanto no programa instalado quanto no modo navegador.
 Desinstalar o programa **não apaga** os dados. Para fazer backup, copie esse arquivo.
 
 ## Rodar durante o desenvolvimento
@@ -28,8 +28,8 @@ Desinstalar o programa **não apaga** os dados. Para fazer backup, copie esse ar
 1. Altere o número em `installer.iss` (`#define AppVersion "1.0.1"`).
 2. No PowerShell, na pasta do projeto: `.\build.ps1`
 3. Resultado:
-   - `dist\Subtil Corretora\` - programa portátil (a pasta inteira)
-   - `dist\Subtil-Corretora-Setup.exe` - instalador para enviar a outros computadores
+   - `dist\Gestão de Seguros\` - programa portátil (a pasta inteira)
+   - `dist\Gestao-de-Seguros-Setup.exe` - instalador para enviar a outros computadores
 
 Instalar uma versão nova por cima da antiga mantém todos os dados.
 
