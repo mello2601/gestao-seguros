@@ -1,7 +1,7 @@
 ﻿; Instalador do Gestão de Seguros (Inno Setup 6). Gerado pelo build.ps1.
 #define AppName "Gestão de Seguros"
 #define AppFolder "Gestao de Seguros"
-#define AppVersion "1.0.3"
+#define AppVersion "1.0.4"
 #define AppExe "Gestao de Seguros.exe"
 
 [Setup]
