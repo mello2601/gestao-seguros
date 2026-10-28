@@ -20,7 +20,7 @@ Sistema de gestão de seguros para Windows: segurados, apólices, renovações, 
 - Instalar uma versão nova por cima da antiga mantém todos os dados.
 - Desinstalar o programa **não apaga** os dados.
 
-## Rodar a partir do código
+## Rodar a partir do código (Sem instalador)
 
 Requisito: Python 3.12.
 
